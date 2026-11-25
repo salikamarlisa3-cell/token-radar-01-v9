@@ -1,0 +1,112 @@
+/* Research Desk theme: warm paper, ink, one emerald, one amber.
+   8px spacing scale; type ramp 12 / 13 / 15 / 20 / 28; 1px rules. */
+:root {
+  --paper: #FAF7F2;
+  --ink: #161513;
+  --muted: #6B655C;
+  --rule: #DDD5C7;
+  --emerald: #0E7C5A;
+  --amber: #B45309;
+  --card: #FFFFFF;
+  --wash: #F1EBE0;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.masthead, main, .colophon { max-width: 1184px; margin: 0 auto; padding: 0 24px; }
+.masthead { padding-top: 32px; }
+.kicker {
+  margin: 0 0 8px;
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--emerald); font-weight: 700;
+}
+h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.2; font-weight: 700; }
+.coverage { margin: 0 0 16px; color: var(--muted); font-size: 13px; }
+.tabs { display: flex; gap: 24px; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
+.tabs a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 15px; }
+.tabs a.on { color: var(--ink); border-bottom: 2px solid var(--emerald); padding-bottom: 6px; }
+
+/* The completeness ledger strip: one line of proof that every protocol in
+   the snapshot is accounted for. Full table lives on the methodology page. */
+.ledgerstrip {
+  margin-top: 16px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--emerald);
+  padding: 8px 16px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.ledgerstrip strong { color: var(--ink); }
+.ledgerstrip .lgroup { white-space: nowrap; }
+.ledgerstrip .ltotal { color: var(--emerald); font-weight: 700; }
+
+main { padding-top: 24px; padding-bottom: 32px; }
+.lede { font-size: 15px; max-width: 72ch; }
+.lede strong { color: var(--emerald); }
+
+.toolbar {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  margin: 16px 0; padding: 16px; background: var(--card); border: 1px solid var(--rule);
+}
+.toolbar input[type="search"], .toolbar select {
+  font: inherit; font-size: 13px; padding: 8px;
+  border: 1px solid var(--rule); background: var(--paper); color: var(--ink);
+}
+.toolbar label { font-size: 13px; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+.resultline { font-size: 13px; color: var(--muted); margin: 8px 0 16px; }
+
+table.board { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--rule); }
+table.board th, table.board td { padding: 8px; text-align: left; font-size: 13px; vertical-align: top; }
+table.board thead th {
+  position: sticky; top: 0; background: var(--wash); cursor: pointer; user-select: none;
+  border-bottom: 1px solid var(--rule); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+}
+table.board tbody tr:nth-child(even) { background: #FBF9F5; }
+table.board tbody tr { border-bottom: 1px solid var(--rule); }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pos { color: var(--emerald); }
+.neg { color: var(--amber); }
+a.plink { color: var(--ink); font-weight: 600; text-decoration: none; }
+a.plink:hover { color: var(--emerald); text-decoration: underline; }
+.star { color: var(--amber); font-weight: 700; }
+.sub { color: var(--muted); font-size: 12px; }
+/* The per-row uncertainty interval, straight under the price it belongs to. */
+.interval { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.interval b { color: var(--ink); font-weight: 600; }
+.badge {
+  display: inline-block; padding: 2px 8px; font-size: 12px; font-weight: 700;
+  border: 1px solid var(--rule); white-space: nowrap;
+}
+.badge.farm { background: var(--emerald); color: #FFFFFF; border-color: var(--emerald); }
+.badge.watch { background: var(--wash); color: var(--ink); }
+.badge.skip { background: transparent; color: var(--muted); }
+
+h2 { font-size: 20px; margin: 24px 0 8px; }
+h3 { font-size: 15px; margin: 16px 0 8px; }
+.card { background: var(--card); border: 1px solid var(--rule); padding: 16px; margin: 16px 0; }
+.verdictbox { border-left: 3px solid var(--emerald); }
+.verdictbox.skip { border-left-color: var(--muted); }
+table.walk { width: 100%; border-collapse: collapse; }
+table.walk td, table.walk th { padding: 8px; border-bottom: 1px solid var(--rule); font-size: 13px; text-align: left; }
+table.walk .num { text-align: right; }
+ol.plan li { margin-bottom: 8px; max-width: 78ch; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+.fact { background: var(--wash); padding: 8px; }
+.fact .k { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.fact .v { font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+table.ablation, table.ledger { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--rule); }
+table.ablation td, table.ablation th, table.ledger td, table.ledger th {
+  padding: 8px; border-bottom: 1px solid var(--rule); font-size: 13px; text-align: left;
+}
+.kept { color: var(--emerald); font-weight: 700; }
+.dropped { color: var(--amber); font-weight: 700; }
+.method p, .method li { max-width: 78ch; }
+.colophon { padding-bottom: 32px; color: var(--muted); font-size: 12px; }
+.back { font-size: 13px; }
